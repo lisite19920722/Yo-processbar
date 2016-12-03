@@ -4,6 +4,16 @@
     <acme-navbar creation-date="about.creationDate"></acme-navbar>
   </div>
 
+  <p>名字 : <input type="text" ng-model="name"></p>
+  <h1>Hello {{name}}</h1>
+
+  <p>进度 : <input type="text" ng-model="lisitebar"></p>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="60"
+         aria-valuemin="0" aria-valuemax="100" style="width: {{lisitebar}}%;">
+    </div>
+  </div>
+
   <!--<div class="jumbotron text-center">-->
     <!--<h1>'Allo, 'Allo!</h1>-->
     <!--<p class="lead">-->
