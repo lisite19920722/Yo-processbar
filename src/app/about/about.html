@@ -4,7 +4,7 @@
     <acme-navbar creation-date="about.creationDate"></acme-navbar>
   </div>
 
-  <p>名字 : <input type="text" ng-model="name"></p>
+  <p>名字 : <input type="text" ng-model="name"></p>{{about.lisite}}
   <h1>Hello {{name}}</h1>
 
   <p>进度 : <input type="text" ng-model="lisitebar"></p>
@@ -13,6 +13,55 @@
          aria-valuemin="0" aria-valuemax="100" style="width: {{lisitebar}}%;">
     </div>
   </div>
+
+
+  <!--<div class="col-md-1" style="padding:0px 0px 0px 20px">-->
+    <!--<p class="handler-title" style="margin-top:15px;font-size:60%">固定资产投资</p>-->
+  <!--</div>-->
+  <!--<div class="col-md-3">-->
+    <!--<div class="progress-box">-->
+      <!--<div class="percentage-cur" ng-init="selectedRange=0">-->
+        <!--<span class="num">{{selectedRange}}%</span>-->
+      <!--</div>-->
+      <!--<div class="progress-bar progress-bar-slider" style="width:100%">-->
+        <!--<div  ui-slider="about.colorpicker.options" min="-100" max="100" ng-model="selectedRange"></div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-md-2">-->
+    <!--<div class="input-group input-group-sm" style="width:50%;margin-top:17px;">-->
+      <!--<input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3" ng-model="selectedRange"attern="((-)?[0-9]{1,2}|100|-100)"  />-->
+      <!--<span class="input-group-addon" id="sizing-addon3"style="padding:0px 2px 0px 2px">%</span>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <p>
+    <b>R</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="RC" id="R" data-slider-tooltip="hide" data-slider-handle="square" />
+  </p>
+  <p>
+    <b>G</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="GC" id="G" data-slider-tooltip="hide" data-slider-handle="round" />
+  </p>
+  <p>
+    <b>B</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="BC" id="B" data-slider-tooltip="hide" data-slider-handle="triangle" />
+  </p>
+  <div id="RGB"></div>
+
+  <br><br>
+  <input id="ex6" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="50"/>
+  <span id="ex6CurrentSliderValLabel">Current Slider Value: <span id="ex6SliderVal">{{selectedRange}}</span></span>
+  <br>
+  <div class="col-md-2">
+    <div class="input-group input-group-sm" style="width:50%;margin-top:17px;">
+      <input type="text" id="formText" class="form-control" placeholder="0" aria-describedby="sizing-addon3" pattern="((-)?[0-9]{1,2}|100|-100)"  />
+      <span class="input-group-addon" id="sizing-addon3"style="padding:0px 2px 0px 2px">%</span>
+    </div>
+  </div>
+
+  <br><br>
+  <label for="modelValue">Slider Value in ng-model:</label>
+  <input id="modelValue" type="range" ng-model="model.first" min="{{testOptions.min}}" step="{{testOptions.step}}"
+         max="{{testOptions.max}}">
+  <input ng-model="model.first" class="form-control">
 
   <!--<div class="jumbotron text-center">-->
     <!--<h1>'Allo, 'Allo!</h1>-->
@@ -40,5 +89,4 @@
       <!--</div>-->
     <!--</div>-->
   <!--</div>-->
-
 </div>
