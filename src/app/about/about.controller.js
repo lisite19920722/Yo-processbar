@@ -6,21 +6,8 @@
     .controller('AboutController', AboutController);
 
   /** @ngInject */
-  function AboutController($scope, $timeout, webDevTec, toastr) {
+  function AboutController($scope) {
     var vm = this;
-
-    vm.awesomeThings = [];
-    vm.classAnimation = '';
-    vm.creationDate = 1480750228371;
-    vm.showToastr = showToastr;
-    vm.colorpicker = {
-      options: {
-        orientation: 'horizontal',
-        min: -100,
-        max: 100,
-        range: 'min'
-      }
-    };
     vm.lisite="李思特123";
 
     var RGBChange = function() {
@@ -36,33 +23,5 @@
     var b = $('#B').slider()
       .on('slide', RGBChange)
       .data('slider');
-
-    $("#ex6").slider();
-    $("#ex6").on("slide", function(slideEvt) {
-      $("#ex6SliderVal").text(slideEvt.value);
-      $("#formText").attr("value",slideEvt.value);
-    });
-
-    activate();
-
-    function activate() {
-      getWebDevTec();
-      $timeout(function() {
-        vm.classAnimation = 'rubberBand';
-      }, 4000);
-    }
-
-    function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-      vm.classAnimation = '';
-    }
-
-    function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
-
-      angular.forEach(vm.awesomeThings, function(awesomeThing) {
-        awesomeThing.rank = Math.random();
-      });
-    }
   }
 })();
