@@ -5,6 +5,6 @@
   angular
     .module('yoProcessbar')
     .constant('malarkey', malarkey)
-    .constant('moment', moment);
-
+    .constant('moment', moment)
+    .constant('BASE_URL', '/api');
 })();

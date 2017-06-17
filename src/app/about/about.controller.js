@@ -6,15 +6,13 @@
     .controller('AboutController', AboutController);
 
   /** @ngInject */
-  function AboutController() {
+  function AboutController($log, BASE_URL, qService, environmentRes) {
     var vm = this;
     vm.lisite="李思特1234";
-
     var RGBChange = function() {
       // $('#RGB').css('background', 'rgb('+r.getValue()+','+g.getValue()+','+b.getValue()+')')
       angular.element(document).find('#RGB').css('background', 'rgb('+r.getValue()+','+g.getValue()+','+b.getValue()+')')
     };
-
     // var r = $('#R').slider()
     //   .on('slide', RGBChange)
     //   .data('slider');
@@ -27,6 +25,16 @@
     var b = angular.element(document).find('#B').slider()
       .on('slide', RGBChange)
       .data('slider');
+    $log.log(BASE_URL + '123');
+
+    var airQualityGetParams = {};
+    var airQualityGetHeaders = {};
+    var airQualityGetPromise = qService.httpGetWithToken(environmentRes.getAirQuality, airQualityGetParams, airQualityGetHeaders);
+    airQualityGetPromise.then(function(data){
+      $log.log(data.data);
+    }, function(error){
+      $log.log('发送失败' + error);
+    });
   }
 })();
 
