@@ -5,7 +5,7 @@
 # Run
 使用gulp serve来运行工程 
 
-# Build & Deploy
+# Build and Deploy
 使用gulp build命令来打包，对于后端项目可以采用gulp build war -x test
 
 # Get TempToken
