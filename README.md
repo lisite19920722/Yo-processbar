@@ -7,3 +7,9 @@
 
 # Build & Deploy
 使用gulp build命令来打包，对于后端项目可以采用gulp build war -x test
+
+# 获取TempToken
+localhost:8080/api/account/authentication<br>
+Header:<br>
+X-Username: system<br>
+X-Password: 40601b2d7173b2b9f9c4ff98f7b66a44<br>

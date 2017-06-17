@@ -13,6 +13,14 @@
             headers: headers
           }
         });
+      },
+      getAirPollution: function(headers){
+        return $resource(BASE_URL+'/environment/air/air_pollution', {}, {
+          get: {
+            method: 'GET',
+            headers: headers
+          }
+        });
       }
     };
   }

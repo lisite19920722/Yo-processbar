@@ -35,6 +35,15 @@
     }, function(error){
       $log.log('发送失败' + error);
     });
+
+    var airPollutionGetParams = {};
+    var airPollutionGetHeaders = {};
+    var airPollutionGetPromise = qService.httpGetWithToken(environmentRes.getAirPollution, airPollutionGetParams, airPollutionGetHeaders);
+    airPollutionGetPromise.then(function(data){
+      $log.log(data.data);
+    }, function(error){
+      $log.log('发送失败' + error);
+    });
   }
 })();
 
