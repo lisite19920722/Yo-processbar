@@ -13,3 +13,6 @@ localhost:8080/api/account/authentication<br>
 Header:<br>
 X-Username: system<br>
 X-Password: 40601b2d7173b2b9f9c4ff98f7b66a44<br>
+
+# About Deploy
+需要更改src/app/index.constants.js文件，使其BASE_URL发生变化
