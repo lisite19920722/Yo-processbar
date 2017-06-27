@@ -6,7 +6,7 @@
 
   /** @ngInject */
   function qService($q, $state) {
-    var tempToken = 'd3e3645440654427b51c007425e5a15b';
+    var tempToken = 'ccd4204120b045888686f046b447edfa';
     var workspaceId = 1;
     var successHandler = function(value){
       if (value.code == "502") {
