@@ -4,10 +4,11 @@
     <acme-navbar creation-date="about.creationDate"></acme-navbar>
   </div>
 
-  <p>名字 : <input type="text" ng-model="name"></p>{{about.lisite}}
-  <h1>Hello {{name}}</h1>
+  <h3>{{about.lisite}}</h3><br>
+  <p>输入值为: <input type="text" ng-model="name"></p>
+  <h4>AQI预测值为 {{name}}</h4>
 
-  <p>进度 : <input type="text" ng-model="lisitebar"></p>
+  <p>进度条: <input type="text" ng-model="lisitebar"></p>
   <div class="progress">
     <div class="progress-bar" role="progressbar"
          aria-valuemin="0" aria-valuemax="100" style="width: {{lisitebar}}%;">
@@ -15,13 +16,13 @@
   </div>
 
   <p>
-    <b>R</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="RC" id="R" data-slider-tooltip="hide" data-slider-handle="square" />
+    <b>氮氧化物</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="RC" id="R" data-slider-tooltip="hide" data-slider-handle="square" />
   </p>
   <p>
-    <b>G</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="GC" id="G" data-slider-tooltip="hide" data-slider-handle="round" />
+    <b>烟尘</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="GC" id="G" data-slider-tooltip="hide" data-slider-handle="round" />
   </p>
   <p>
-    <b>B</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="BC" id="B" data-slider-tooltip="hide" data-slider-handle="triangle" />
+    <b>二氧化硫</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="BC" id="B" data-slider-tooltip="hide" data-slider-handle="triangle" />
   </p>
   <div id="RGB"></div>
 

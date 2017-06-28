@@ -8,7 +8,7 @@
   /** @ngInject */
   function AboutController($log, BASE_URL, qService, environmentRes) {
     var vm = this;
-    vm.lisite="李思特1234";
+    vm.lisite="空气质量AQI数值预测";
     var RGBChange = function() {
       // $('#RGB').css('background', 'rgb('+r.getValue()+','+g.getValue()+','+b.getValue()+')')
       angular.element(document).find('#RGB').css('background', 'rgb('+r.getValue()+','+g.getValue()+','+b.getValue()+')')
