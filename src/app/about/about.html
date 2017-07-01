@@ -4,20 +4,40 @@
     <acme-navbar creation-date="about.creationDate"></acme-navbar>
   </div>
 
-  <h3>{{about.lisite}}</h3><br>
-  <p>日期: {{about.today1}}</p>
-  <p>
-    <strong>二氧化硫:</strong> {{about.so2}}毫克/立方米&nbsp;&nbsp;&nbsp;<strong>二氧化氮:</strong> {{about.no2}}毫克/立方米&nbsp;&nbsp;&nbsp;
-    <strong>PM2.5:</strong> {{about.pm25}}毫克/立方米&nbsp;&nbsp;&nbsp;<strong>PM10:</strong> {{about.pm10}}毫克/立方米&nbsp;&nbsp;&nbsp;
-    <strong>臭氧:</strong> {{about.o3}}毫克/立方米&nbsp;&nbsp;&nbsp;
-  </p>
-  <p>输入值为: <input type="text" ng-model="name"></p>
-  <h4>AQI预测值为 {{about.modelOutput}}</h4>
-
-  <p>进度条: <input type="text" ng-model="lisitebar"></p>
-  <div class="progress">
-    <div class="progress-bar" role="progressbar"
-         aria-valuemin="0" aria-valuemax="100" style="width: {{lisitebar}}%;">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title">太仓市空气质量监控</h3>
+    </div>
+    <div class="panel-body">
+      <p>日期: {{about.today1}}</p>
+      <p>
+        <strong>二氧化硫:</strong> {{about.so2}}毫克/立方米&nbsp;&nbsp;&nbsp;<strong>二氧化氮:</strong> {{about.no2}}毫克/立方米&nbsp;&nbsp;&nbsp;
+        <strong>PM2.5:</strong> {{about.pm25}}毫克/立方米&nbsp;&nbsp;&nbsp;<br><br>
+        <strong>PM10:</strong> {{about.pm10}}毫克/立方米&nbsp;&nbsp;&nbsp;<strong>臭氧:</strong> {{about.o3}}毫克/立方米&nbsp;&nbsp;&nbsp;
+        <strong>AQI:</strong> {{about.aqi}}
+      </br>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{about.lisite}}</h3>
+    </div>
+    <div class="panel-body">
+      <p>
+        昨日二氧化硫: <input type="text" ng-model="about.so2In" style="width: 5%">毫克/立方米&nbsp;&nbsp;&nbsp;
+        昨日二氧化氮: <input type="text" ng-model="about.no2In" style="width: 5%">毫克/立方米&nbsp;&nbsp;&nbsp;
+        昨日PM2.5: <input type="text" ng-model="about.pm25In" style="width: 5%">毫克/立方米&nbsp;&nbsp;&nbsp;<br><br>
+        昨日PM10: <input type="text" ng-model="about.pm10In" style="width: 5%">毫克/立方米&nbsp;&nbsp;&nbsp;
+        昨日臭氧: <input type="text" ng-model="about.o3In" style="width: 5%">毫克/立方米&nbsp;&nbsp;&nbsp;
+      </p>
+      <button type="button" class="btn btn-lg btn-success" ng-click="about.clickPredict()">点击进行预测</button>
+      <h4>AQI预测值为 {{about.modelOutput}}</h4>
+      <br>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar"
+             aria-valuemin="0" aria-valuemax="200" style="width: {{about.modelOutput}}%;">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -33,7 +53,7 @@
   <div id="RGB"></div>
 
   <br><br>
-  <div class="panel panel-success" style="width: 60%">
+  <div class="panel panel-info">
     <div class="panel-heading">
       <h3 class="panel-title">空气质量达标限制</h3>
     </div>
@@ -54,7 +74,7 @@
       <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
     </div>
   </div>
-  <div class="panel panel-primary" style="width: 60%">
+  <div class="panel panel-warning">
     <div class="panel-heading">
       <h3 class="panel-title">工厂废气排放规划</h3>
     </div>
@@ -85,7 +105,7 @@
       </div>
     </div>
   </div>
-  <div class="panel panel-danger" style="width: 60%">
+  <div class="panel panel-danger">
     <div class="panel-heading">
       <h3 class="panel-title">经济总量及政府补偿</h3>
     </div>

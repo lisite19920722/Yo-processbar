@@ -38,6 +38,7 @@
       vm.pm25=data.data[4].pm25;
       vm.pm10=data.data[4].pm10;
       vm.o3=data.data[4].o3;
+      vm.aqi=data.data[4].aqi;
     }, function(error){
       $log.log('发送失败' + error);
     });
@@ -45,21 +46,31 @@
     var airPollutionGetParams = {};
     var airPollutionGetHeaders = {};
     var airPollutionGetPromise = qService.httpGetWithToken(environmentRes.getAirPollution, airPollutionGetParams, airPollutionGetHeaders);
-    airPollutionGetPromise.then(function(data){
+    airPollutionGetPromise.then(function (data) {
       $log.log(data.data);
-    }, function(error){
+    }, function (error) {
       $log.log('发送失败' + error);
     });
 
-    var outTest1= "9,35,53,40,116,3,0,757";
-    var airModelGetParams = {test: "参数传过来了，我们自豪", test1: outTest1};
-    var airModelGetHeaders = {};
-    var airModelGetPromise = qService.httpGetWithToken(environmentRes.getAirModel, airModelGetParams, airModelGetHeaders);
-    airModelGetPromise.then(function(data){
-      $log.log(data.data);
-      vm.modelOutput=data.data[5];
-    }, function(error){
-      $log.log('发送失败' + error);
-    });
+    vm.clickPredict = function (){
+      if(vm.so2In != angular.isNullOrUndefined && vm.no2In != angular.isNullOrUndefined && vm.pm25In != angular.isNullOrUndefined && vm.pm10In != angular.isNullOrUndefined && vm.o3In != angular.isNullOrUndefined){
+        if (isNaN(parseFloat(vm.so2In)) || isNaN(parseFloat(vm.no2In)) || isNaN(parseFloat(vm.pm25In)) || isNaN(parseFloat(vm.pm10In)) || isNaN(parseFloat(vm.o3In)))
+          alert("输入值不是数字");
+        else{
+          var outTest1 = vm.so2In + "," + vm.no2In + "," + vm.pm25In + "," + vm.pm10In + "," + vm.o3In + ",3,0,757";//最后三项为风力风向、降雨和工业废气排放量
+          var airModelGetParams = {test: "参数传过来了，我们自豪", test1: outTest1};
+          var airModelGetHeaders = {};
+          var airModelGetPromise = qService.httpGetWithToken(environmentRes.getAirModel, airModelGetParams, airModelGetHeaders);
+          airModelGetPromise.then(function (data) {
+            $log.log(data.data);
+            vm.modelOutput = data.data[5];
+          }, function (error) {
+            $log.log('发送失败' + error);
+          });
+        }
+      }
+      else
+        alert("输入值为空");
+    }
   }
 })();
