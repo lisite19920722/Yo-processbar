@@ -32,6 +32,12 @@
     var airQualityGetPromise = qService.httpGetWithToken(environmentRes.getAirQuality, airQualityGetParams, airQualityGetHeaders);
     airQualityGetPromise.then(function(data){
       $log.log(data.data);
+      vm.today1=data.data[2];
+      vm.so2=data.data[4].so2;
+      vm.no2=data.data[4].no2;
+      vm.pm25=data.data[4].pm25;
+      vm.pm10=data.data[4].pm10;
+      vm.o3=data.data[4].o3;
     }, function(error){
       $log.log('发送失败' + error);
     });

@@ -5,6 +5,12 @@
   </div>
 
   <h3>{{about.lisite}}</h3><br>
+  <p>日期: {{about.today1}}</p>
+  <p>
+    <strong>二氧化硫:</strong> {{about.so2}}毫克/立方米&nbsp;&nbsp;&nbsp;<strong>二氧化氮:</strong> {{about.no2}}毫克/立方米&nbsp;&nbsp;&nbsp;
+    <strong>PM2.5:</strong> {{about.pm25}}毫克/立方米&nbsp;&nbsp;&nbsp;<strong>PM10:</strong> {{about.pm10}}毫克/立方米&nbsp;&nbsp;&nbsp;
+    <strong>臭氧:</strong> {{about.o3}}毫克/立方米&nbsp;&nbsp;&nbsp;
+  </p>
   <p>输入值为: <input type="text" ng-model="name"></p>
   <h4>AQI预测值为 {{name}}</h4>
 
@@ -35,17 +41,15 @@
       <label style="font-size: 18px">AQI：</label>
       <input type="text" style="width: 5%; margin-top: 10px; display: inline-block">
       <br>
-      <label style="font-size: 18px">PM2.5：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <label style="font-size: 18px">PM10：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <label style="font-size: 18px">二氧化硫：</label>
       <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
-      <br>
       <label style="font-size: 18px">二氧化氮：</label>
       <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
-      <label style="font-size: 18px">一氧化碳：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> mg/m³&nbsp;
+      <label style="font-size: 18px">PM2.5：</label>
+      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
+      <br>
+      <label style="font-size: 18px">PM10：</label>
+      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
       <label style="font-size: 18px">臭氧：</label>
       <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
     </div>
