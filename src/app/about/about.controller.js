@@ -51,11 +51,13 @@
       $log.log('发送失败' + error);
     });
 
-    var airModelGetParams = {test: "参数传过来了，我们自豪", test1: "第二个参数，我们骄傲"};
+    var outTest1= "9,35,53,40,116,3,0,757";
+    var airModelGetParams = {test: "参数传过来了，我们自豪", test1: outTest1};
     var airModelGetHeaders = {};
     var airModelGetPromise = qService.httpGetWithToken(environmentRes.getAirModel, airModelGetParams, airModelGetHeaders);
     airModelGetPromise.then(function(data){
       $log.log(data.data);
+      vm.modelOutput=data.data[5];
     }, function(error){
       $log.log('发送失败' + error);
     });

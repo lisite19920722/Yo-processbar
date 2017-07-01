@@ -23,7 +23,7 @@
         });
       },
       getAirModel: function(headers){
-        return $resource(BASE_URL+'/environment/air/air_model/1', {}, {
+        return $resource(BASE_URL+'/environment/air/air_model', {}, {
           get: {
             method: 'GET',
             headers: headers
