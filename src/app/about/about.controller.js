@@ -50,5 +50,14 @@
     }, function(error){
       $log.log('发送失败' + error);
     });
+
+    var airModelGetParams = {};
+    var airModelGetHeaders = {};
+    var airModelGetPromise = qService.httpGetWithToken(environmentRes.getAirModel, airModelGetParams, airModelGetHeaders);
+    airModelGetPromise.then(function(data){
+      $log.log(data.data);
+    }, function(error){
+      $log.log('发送失败' + error);
+    });
   }
 })();
