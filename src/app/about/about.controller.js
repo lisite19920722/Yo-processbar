@@ -38,6 +38,9 @@
       vm.pm25=data.data[4].pm25;
       vm.pm10=data.data[4].pm10;
       vm.o3=data.data[4].o3;
+      vm.wind=3;
+      vm.rainfall=0;
+      vm.discharge=757*10;
       vm.aqi=data.data[4].aqi;
     }, function(error){
       $log.log('发送失败' + error);
@@ -53,8 +56,8 @@
     });
 
     vm.clickPredict = function (){
-      if(vm.so2In != angular.isNullOrUndefined && vm.no2In != angular.isNullOrUndefined && vm.pm25In != angular.isNullOrUndefined && vm.pm10In != angular.isNullOrUndefined && vm.o3In != angular.isNullOrUndefined){
-        if (isNaN(parseFloat(vm.so2In)) || isNaN(parseFloat(vm.no2In)) || isNaN(parseFloat(vm.pm25In)) || isNaN(parseFloat(vm.pm10In)) || isNaN(parseFloat(vm.o3In)))
+      if(vm.so2In != angular.isNullOrUndefined && vm.no2In != angular.isNullOrUndefined && vm.pm25In != angular.isNullOrUndefined && vm.pm10In != angular.isNullOrUndefined && vm.o3In != angular.isNullOrUndefined && vm.windIn != angular.isNullOrUndefined && vm.rainfallIn != angular.isNullOrUndefined && vm.dischargeIn != angular.isNullOrUndefined){
+        if (isNaN(parseFloat(vm.so2In)) || isNaN(parseFloat(vm.no2In)) || isNaN(parseFloat(vm.pm25In)) || isNaN(parseFloat(vm.pm10In)) || isNaN(parseFloat(vm.o3In)) || isNaN(parseFloat(vm.windIn)) || isNaN(parseFloat(vm.rainfallIn)) || isNaN(parseFloat(vm.dischargeIn)))
           alert("输入值不是数字");
         else{
           var outTest1 = vm.so2In + "," + vm.no2In + "," + vm.pm25In + "," + vm.pm10In + "," + vm.o3In + ",3,0,757";//最后三项为风力风向、降雨和工业废气排放量

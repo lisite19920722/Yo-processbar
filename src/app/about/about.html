@@ -14,7 +14,9 @@
         <strong>二氧化硫:</strong> {{about.so2}}毫克/立方米&nbsp;&nbsp;&nbsp;<strong>二氧化氮:</strong> {{about.no2}}毫克/立方米&nbsp;&nbsp;&nbsp;
         <strong>PM2.5:</strong> {{about.pm25}}毫克/立方米&nbsp;&nbsp;&nbsp;<br><br>
         <strong>PM10:</strong> {{about.pm10}}毫克/立方米&nbsp;&nbsp;&nbsp;<strong>臭氧:</strong> {{about.o3}}毫克/立方米&nbsp;&nbsp;&nbsp;
-        <strong>AQI:</strong> {{about.aqi}}
+        <strong>风力风向:</strong> {{about.wind}}&nbsp;&nbsp;&nbsp;<br><br>
+        <strong>降水量:</strong> {{about.rainfall}}毫米&nbsp;&nbsp;&nbsp;<strong>工业废气排放量:</strong> {{about.discharge}}万立方米&nbsp;&nbsp;&nbsp;<br><br>
+      <h4>AQI实时值: {{about.aqi}}</h4>
       </br>
     </div>
   </div>
@@ -27,11 +29,14 @@
         昨日二氧化硫: <input type="text" ng-model="about.so2In" style="width: 5%">毫克/立方米&nbsp;&nbsp;&nbsp;
         昨日二氧化氮: <input type="text" ng-model="about.no2In" style="width: 5%">毫克/立方米&nbsp;&nbsp;&nbsp;
         昨日PM2.5: <input type="text" ng-model="about.pm25In" style="width: 5%">毫克/立方米&nbsp;&nbsp;&nbsp;<br><br>
-        昨日PM10: <input type="text" ng-model="about.pm10In" style="width: 5%">毫克/立方米&nbsp;&nbsp;&nbsp;
-        昨日臭氧: <input type="text" ng-model="about.o3In" style="width: 5%">毫克/立方米&nbsp;&nbsp;&nbsp;
+        昨日PM10: <input type="text" ng-model="about.pm10In" style="width: 5%">毫克/立方米&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        昨日臭氧: <input type="text" ng-model="about.o3In" style="width: 5%">毫克/立方米&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        预报风力风向: <input type="text" ng-model="about.windIn" style="width: 5%">&nbsp;&nbsp;&nbsp;<br><br>
+        预报降水: <input type="text" ng-model="about.rainfallIn" style="width: 5%">毫米&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        昨日工业废气排放量: <input type="text" ng-model="about.dischargeIn" style="width: 5%">万立方米&nbsp;&nbsp;&nbsp;
       </p>
       <button type="button" class="btn btn-lg btn-success" ng-click="about.clickPredict()">点击进行预测</button>
-      <h4>AQI预测值为 {{about.modelOutput}}</h4>
+      <h4>AQI预测值: {{about.modelOutput}}</h4>
       <br>
       <div class="progress">
         <div class="progress-bar" role="progressbar"
