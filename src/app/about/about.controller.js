@@ -75,5 +75,13 @@
       else
         alert("输入值为空");
     }
+
+
+    vm.clickPlan = function (){
+      vm.model_first=30;
+      alert(vm.model_first);
+      // vm.footer="1234";
+      // alert(vm.footer);
+    }
   }
 })();

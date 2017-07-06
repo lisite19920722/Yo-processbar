@@ -64,7 +64,7 @@
     </div>
     <div class="panel-body">
       <label style="font-size: 18px">AQI：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block">
+      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="model_first">
       <br>
       <label style="font-size: 18px">二氧化硫：</label>
       <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
@@ -77,6 +77,8 @@
       <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
       <label style="font-size: 18px">臭氧：</label>
       <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
+      <br><br>
+      <button type="button" class="btn btn-lg btn-success" ng-click="about.clickPlan()">点击进行规划</button>
     </div>
   </div>
   <div class="panel panel-warning">
@@ -86,27 +88,23 @@
     <div class="panel-body">
       <div>
         <label style="font-size: 20px">太仓市协鑫发电厂:</label>
-        <input type="range" ng-model="model.first" min="{{testOptions.min}}" step="{{testOptions.step}}"
-               max="{{testOptions.max}}">
-        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="model.first" class="form-control">%
+        <input type="range" ng-model="model_first">
+        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="model_first" class="form-control">%
       </div>
       <div>
         <label style="font-size: 20px">玖龙纸业:</label>
-        <input type="range" ng-model="model.second" min="{{testOptions.min}}" step="{{testOptions.step}}"
-               max="{{testOptions.max}}">
-        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="model.second" class="form-control">%
+        <input type="range" ng-model="model_second">
+        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="model_second" class="form-control">%
       </div>
       <div>
         <label style="font-size: 20px">华能国际电力:</label>
-        <input type="range" ng-model="model.third" min="{{testOptions.min}}" step="{{testOptions.step}}"
-               max="{{testOptions.max}}">
-        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="model.third" class="form-control">%
+        <input type="range" ng-model="model_third">
+        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="model_third" class="form-control">%
       </div>
       <div>
         <label style="font-size: 20px">国华电力:</label>
-        <input type="range" ng-model="model.fourth" min="{{testOptions.min}}" step="{{testOptions.step}}"
-               max="{{testOptions.max}}">
-        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="model.fourth" class="form-control">%
+        <input type="range" ng-model="model_fourth">
+        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="model_fourth" class="form-control">%
       </div>
     </div>
   </div>
@@ -115,11 +113,11 @@
       <h3 class="panel-title">经济总量及政府补偿</h3>
     </div>
     <div class="panel-body">
-      <label style="font-size: 20px">太仓市经济总量：</label>
-      <input type="text" value="{{10*model.first+10*model.second}}" style="width: 10%; margin-top: 10px; display: inline-block">亿元
+      <label style="font-size: 20px">主要工业企业产值总量：</label>
+      <input type="text" value="{{70*model_first + 75*model_second + 50*model_third + 55*model_fourth}}" style="width: 10%; margin-top: 10px; display: inline-block">万元
       <br>
       <label style="font-size: 20px">政府补偿资金：</label>
-      <input type="text" value="{{1*model.third+1*model.fourth}}" style="width: 10%; margin-top: 10px; display: inline-block">万元
+      <input type="text" value="{{5*model_first + 10*model_second + 6*model_third + 4*model_fourth}}" style="width: 10%; margin-top: 10px; display: inline-block">万元
     </div>
   </div>
 </div>
