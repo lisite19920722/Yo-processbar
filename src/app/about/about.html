@@ -63,21 +63,37 @@
       <h3 class="panel-title">空气质量达标限制</h3>
     </div>
     <div class="panel-body">
-      <label style="font-size: 18px">AQI：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="model_first">
+      <div>
+        <label style="font-size: 20px">AQI:</label>
+        <input type="range" id="AQI" ng-model="about.limit_first" min="0" max="250">
+        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="about.limit_first" class="form-control">
+      </div>
+      <div>
+        <label style="font-size: 20px">二氧化硫:</label>
+        <input type="range" ng-model="about.limit_second">
+        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="about.limit_second" class="form-control">&nbsp;μg/m³
+      </div>
+      <div>
+        <label style="font-size: 20px">二氧化氮:</label>
+        <input type="range" ng-model="about.limit_third">
+        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="about.limit_third" class="form-control">&nbsp;μg/m³
+      </div>
+      <div>
+        <label style="font-size: 20px">PM2.5:</label>
+        <input type="range" ng-model="about.limit_fourth">
+        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="about.limit_fourth" class="form-control">&nbsp;μg/m³
+      </div>
+      <div>
+        <label style="font-size: 20px">PM10:</label>
+        <input type="range" ng-model="about.limit_fifth">
+        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="about.limit_fifth" class="form-control">&nbsp;μg/m³
+      </div>
+      <div>
+        <label style="font-size: 20px">臭氧:</label>
+        <input type="range" ng-model="about.limit_sixth">
+        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="about.limit_sixth" class="form-control">&nbsp;μg/m³
+      </div>
       <br>
-      <label style="font-size: 18px">二氧化硫：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
-      <label style="font-size: 18px">二氧化氮：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
-      <label style="font-size: 18px">PM2.5：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
-      <br>
-      <label style="font-size: 18px">PM10：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
-      <label style="font-size: 18px">臭氧：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block"> μg/m³&nbsp;
-      <br><br>
       <button type="button" class="btn btn-lg btn-success" ng-click="about.clickPlan()">点击进行规划</button>
     </div>
   </div>
@@ -86,26 +102,17 @@
       <h3 class="panel-title">工厂废气排放规划</h3>
     </div>
     <div class="panel-body">
-      <div>
-        <label style="font-size: 20px">太仓市协鑫发电厂:</label>
-        <input type="range" ng-model="model_first">
-        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="model_first" class="form-control">%
-      </div>
-      <div>
-        <label style="font-size: 20px">玖龙纸业:</label>
-        <input type="range" ng-model="model_second">
-        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="model_second" class="form-control">%
-      </div>
-      <div>
-        <label style="font-size: 20px">华能国际电力:</label>
-        <input type="range" ng-model="model_third">
-        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="model_third" class="form-control">%
-      </div>
-      <div>
-        <label style="font-size: 20px">国华电力:</label>
-        <input type="range" ng-model="model_fourth">
-        <input type="text" style="width: 10%; margin-top: 10px; display: inline-block" ng-model="model_fourth" class="form-control">%
-      </div>
+      <label style="font-size: 18px">太仓市协鑫发电：</label>
+      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="about.model_first">&nbsp;万吨
+      <br>
+      <label style="font-size: 18px">玖龙纸业（太仓）：</label>
+      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="about.model_second">&nbsp;万吨
+      <br>
+      <label style="font-size: 18px">华能太仓电厂：</label>
+      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="about.model_third">&nbsp;万吨
+      <br>
+      <label style="font-size: 18px">国华太仓电厂：</label>
+      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="about.model_fourth">&nbsp;万吨
     </div>
   </div>
   <div class="panel panel-danger">
@@ -114,10 +121,10 @@
     </div>
     <div class="panel-body">
       <label style="font-size: 20px">主要工业企业产值总量：</label>
-      <input type="text" value="{{70*model_first + 75*model_second + 50*model_third + 55*model_fourth}}" style="width: 10%; margin-top: 10px; display: inline-block">万元
+      <input type="text" value="{{about.model_first + about.model_second + about.model_third + about.model_fourth}}" style="width: 10%; margin-top: 10px; display: inline-block">万元
       <br>
       <label style="font-size: 20px">政府补偿资金：</label>
-      <input type="text" value="{{5*model_first + 10*model_second + 6*model_third + 4*model_fourth}}" style="width: 10%; margin-top: 10px; display: inline-block">万元
+      <input type="text" value="{{about.model_first/8 + about.model_second/8 + about.model_third/9 + about.model_fourth/9}}" style="width: 10%; margin-top: 10px; display: inline-block">万元
     </div>
   </div>
 </div>

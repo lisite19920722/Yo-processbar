@@ -76,12 +76,11 @@
         alert("输入值为空");
     }
 
-
     vm.clickPlan = function (){
-      vm.model_first=30;
-      alert(vm.model_first);
-      // vm.footer="1234";
-      // alert(vm.footer);
+      vm.model_first = parseInt(vm.limit_first) + parseInt(vm.limit_second);
+      vm.model_second = parseInt(vm.limit_second) + parseInt(vm.limit_third);
+      vm.model_third = parseInt(vm.limit_third) + parseInt(vm.limit_fourth);
+      vm.model_fourth = parseInt(vm.limit_fourth) + parseInt(vm.limit_fifth);
     }
   }
 })();
