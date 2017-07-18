@@ -103,16 +103,16 @@
     </div>
     <div class="panel-body">
       <label style="font-size: 18px">太仓市协鑫发电：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="about.model_first">&nbsp;万吨
+      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="about.model_first">&nbsp;万立方米（参考值：19750）
       <br>
       <label style="font-size: 18px">玖龙纸业（太仓）：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="about.model_second">&nbsp;万吨
+      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="about.model_second">&nbsp;万立方米（参考值：4590）
       <br>
       <label style="font-size: 18px">华能太仓电厂：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="about.model_third">&nbsp;万吨
+      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="about.model_third">&nbsp;万立方米（参考值：6250）
       <br>
       <label style="font-size: 18px">国华太仓电厂：</label>
-      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="about.model_fourth">&nbsp;万吨
+      <input type="text" style="width: 5%; margin-top: 10px; display: inline-block" ng-model="about.model_fourth">&nbsp;万立方米（参考值：8890）
     </div>
   </div>
   <div class="panel panel-danger">
@@ -121,10 +121,10 @@
     </div>
     <div class="panel-body">
       <label style="font-size: 20px">主要工业企业产值总量：</label>
-      <input type="text" value="{{about.model_first + about.model_second + about.model_third + about.model_fourth}}" style="width: 10%; margin-top: 10px; display: inline-block">万元
+      <input type="text" value="{{about.model_first* 0.0125 + about.model_second* 0.0125 + about.model_third* 0.0125 + about.model_fourth* 0.0125}}" style="width: 10%; margin-top: 10px; display: inline-block">万元
       <br>
       <label style="font-size: 20px">政府补偿资金：</label>
-      <input type="text" value="{{about.model_first/8 + about.model_second/8 + about.model_third/9 + about.model_fourth/9}}" style="width: 10%; margin-top: 10px; display: inline-block">万元
+      <input type="text" value="{{about.model_first/500 + about.model_second/400 + about.model_third/400 + about.model_fourth/500}}" style="width: 10%; margin-top: 10px; display: inline-block">万元
     </div>
   </div>
 </div>

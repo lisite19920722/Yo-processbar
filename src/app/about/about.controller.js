@@ -77,10 +77,10 @@
     }
 
     vm.clickPlan = function (){
-      vm.model_first = parseInt(vm.limit_first) + parseInt(vm.limit_second);
-      vm.model_second = parseInt(vm.limit_second) + parseInt(vm.limit_third);
-      vm.model_third = parseInt(vm.limit_third) + parseInt(vm.limit_fourth);
-      vm.model_fourth = parseInt(vm.limit_fourth) + parseInt(vm.limit_fifth);
+      vm.model_first = parseInt(vm.limit_first)*150 + parseInt(vm.limit_second) *100;
+      vm.model_second = parseInt(vm.limit_second)*80 + parseInt(vm.limit_third)*60;
+      vm.model_third = parseInt(vm.limit_third)*60 + parseInt(vm.limit_fourth)*100;
+      vm.model_fourth = parseInt(vm.limit_fourth)*80 + parseInt(vm.limit_fifth)*120;
     }
   }
 })();
